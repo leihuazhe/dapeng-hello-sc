@@ -15,12 +15,17 @@ services:
     volumes:
       - "/data/logs/dapeng/hello-service:/dapeng-container/logs"
     environment:
+      - soa_monitor_enable=false
+      - soa_transactional_enable=false
+      - soa_core_pool_size=100
+      - LANG=zh_CN.UTF-8
+      - TZ=CST-8
       - soa_container_port=${hello_service_port}
       - soa_container_ip=${hello_service_ip}
       - soa_zookeeper_host=${soa_zookeeper_host}
     ports:
       - "${hello_service_port}:${hello_service_port}"
     labels:
-      - project.source=https://github.com/StruggleYang/dapeng-hello.git
+      - project.source=https://github.com/dapeng-soa/dapeng-hello.git
       - project.depends=helloZk
       - project.owner=struy
