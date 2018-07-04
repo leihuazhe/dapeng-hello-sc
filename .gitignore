@@ -1,0 +1,7 @@
+*/target/
+/hello-api/src/main/java/
+/hello-api/src/main/resources/*.xml
+/hello-service/docker/hello-service/
+*.log
+.idea
+*.iml
