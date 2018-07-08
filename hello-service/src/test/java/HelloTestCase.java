@@ -1,5 +1,6 @@
 import com.dapeng.example.hello.service.HelloService;
 import com.github.dapeng.core.SoaException;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,9 @@ public class HelloTestCase {
         try {
             String result = helloService.sayHello("Dapeng");
             System.out.println("result-->" + result);
+            Assert.assertTrue(result.contains("Dapeng"));
         } catch (SoaException e) {
-            e.printStackTrace();
+            System.out.println(e.getMsg());
         }
     }
 
