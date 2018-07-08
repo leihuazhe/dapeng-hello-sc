@@ -4,14 +4,14 @@
 ## 项目目录树
 ```
 |--dapeng-hello
-|  |--hello-api
+|  |--hello-api                 dapeng服务api，插件生成代码
 |  |  |--src
 |  |  |  |--main
 |  |  |  |  |--java
 |  |  |  |  |--resources
-|  |  |  |  |  |--thrifts
+|  |  |  |  |  |--thrifts       IDL文件存放
 |  |  |--pom.xml
-|  |--hello-service
+|  |--hello-service             dapeng服务实现
 |  |  |--src
 |  |  |  |--main
 |  |  |  |  |--java
@@ -22,9 +22,10 @@
 |  |  |--pom.xml
 |  |  |--logs
 |  |  |--docker
-|  |  |  |--Dockerfile
+|  |  |  |--Dockerfile          
 |  |--.gitignore
 |  |--pom.xml
+|  |--hello-test-clinet         客户端测试
 ------------------------------------
 ```
 
@@ -43,6 +44,9 @@ mvn compile dapeng:run
 cd hello-service
 mvn compile com.github.dapeng:dapeng-maven-plugin:2.0.2:run
 ```
+## 本地测试
+- 客户端测试代码在hello-test-client，测试前确保服务已启动服务，运行HelloClientTest即可
+- 单元测试代码在hello-service，运行HelloTestCase即可
 >服务默认注册端口:9090
 默认在线测试文档端口:8080
 
