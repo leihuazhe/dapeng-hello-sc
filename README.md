@@ -35,14 +35,14 @@
 docker pull zookeeper
 docker run --name zookeeper -p 2181:2181 --restart always -d zookeeper
 ```
-Dapeng 插件启动服务
+## Dapeng 插件启动服务
 
 ```bash
 cd hello-service
 mvn compile dapeng:run
 或者
 cd hello-service
-mvn compile com.github.dapeng:dapeng-maven-plugin:2.0.2:run
+mvn compile com.github.dapeng-soa:dapeng-maven-plugin:2.1.1:run
 ```
 ## 本地测试
 - 客户端测试代码在hello-test-client，测试前确保服务已启动服务，运行HelloClientTest即可
@@ -62,7 +62,8 @@ mvn clean package
 ## 使用docker-compose编排服务
 使用docker-compose启动服务容器
 ```bash
-docker-compose up -d 
+docker-compose up -d helloZk
+docker-compose up -d helloService
 ```
 以上命令会一并启动一个依赖的 zookeeper 容器 helloZk ,无需单独启动 zookeeper
 

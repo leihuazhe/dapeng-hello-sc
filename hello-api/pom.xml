@@ -14,13 +14,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <dapeng.version>2.0.4</dapeng.version>
+        <dapeng.version>2.1.1</dapeng.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.github.dapeng</groupId>
+            <groupId>com.github.dapeng-soa</groupId>
             <artifactId>dapeng-core</artifactId>
+            <version>${dapeng.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.dapeng-soa</groupId>
+            <artifactId>dapeng-utils</artifactId>
             <version>${dapeng.version}</version>
         </dependency>
     </dependencies>
@@ -28,7 +33,7 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>com.github.dapeng</groupId>
+                <groupId>com.github.dapeng-soa</groupId>
                 <artifactId>dapeng-maven-plugin</artifactId>
                 <version>${dapeng.version}</version>
                 <executions>

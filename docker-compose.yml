@@ -20,11 +20,11 @@ services:
       - soa_core_pool_size=100
       - LANG=zh_CN.UTF-8
       - TZ=CST-8
-      - soa_container_port=${hello_service_port}
-      - soa_container_ip=${hello_service_ip}
-      - soa_zookeeper_host=${soa_zookeeper_host}
+      - soa_container_port=9696
+      - soa_container_ip=#host_ip
+      - soa_zookeeper_host=#host_ip:2181
     ports:
-      - "${hello_service_port}:${hello_service_port}"
+      - "9696:9696"
     labels:
       - project.source=https://github.com/dapeng-soa/dapeng-hello.git
       - project.depends=helloZk
